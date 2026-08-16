@@ -229,33 +229,34 @@ const videoLD = {
           <h2>Protection built into the file delivery process.</h2>
           <p>FileLocker is designed to protect sensitive files before you deliver them.</p>
           
-          <h4 style="margin-top: 24px; font-size: 16px;">AES-256-GCM encryption</h4>
-          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">FileLocker uses AES-256-GCM to protect the contents of the locked file.</p>
-          
-          <h4 style="margin-top: 24px; font-size: 16px;">Argon2id key derivation</h4>
-          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Passwords are processed using Argon2id as part of the key-derivation process.</p>
-
-          <h4 style="margin-top: 24px; font-size: 16px;">Local processing</h4>
-          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Files are processed locally as part of the locking workflow rather than requiring the original document to be uploaded to a FileLocker cloud service.</p>
-
-          <h4 style="margin-top: 24px; font-size: 16px;">Password-protected recovery</h4>
-          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">The protected file requires the correct password to recover the original document.</p>
-
-          <h4 style="margin-top: 24px; font-size: 16px;">Browser-based unlocking</h4>
-          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Recipients can unlock the protected file using a supported modern browser without installing the FileLocker desktop application.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-top: 24px;">
+            <div>
+              <h4 style="font-size: 15px; margin-bottom: 6px;">AES-256-GCM encryption</h4>
+              <p style="font-size: 14px; color: var(--color-ink-soft);">FileLocker uses AES-256-GCM to protect the contents of the locked file.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 15px; margin-bottom: 6px;">Argon2id key derivation</h4>
+              <p style="font-size: 14px; color: var(--color-ink-soft);">Passwords are processed using Argon2id as part of the key-derivation process.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 15px; margin-bottom: 6px;">Local processing</h4>
+              <p style="font-size: 14px; color: var(--color-ink-soft);">Files are processed locally as part of the locking workflow rather than requiring the original document to be uploaded to a FileLocker cloud service.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 15px; margin-bottom: 6px;">Password-protected recovery</h4>
+              <p style="font-size: 14px; color: var(--color-ink-soft);">The protected file requires the correct password to recover the original document.</p>
+            </div>
+            <div>
+              <h4 style="font-size: 15px; margin-bottom: 6px;">Browser-based unlocking</h4>
+              <p style="font-size: 14px; color: var(--color-ink-soft);">Recipients can unlock the protected file using a supported modern browser without installing the FileLocker desktop application.</p>
+            </div>
+          </div>
 
           <div style="margin-top:24px;">
             <a href="/security" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.2);color:#F2EFE6;">Read full security details &rarr;</a>
           </div>
         </div>
-        <div class="badge-grid" style="align-content: start; grid-template-columns: 1fr;">
-          <div class="sec-badge"><strong>AES-256-GCM</strong><br/><span style="font-size: 12px; font-weight: 400;">Encryption</span></div>
-          <div class="sec-badge"><strong>Argon2id</strong><br/><span style="font-size: 12px; font-weight: 400;">Password-based key derivation</span></div>
-          <div class="sec-badge"><strong>Local Processing</strong><br/><span style="font-size: 12px; font-weight: 400;">Files protected on your device</span></div>
-          <div class="sec-badge"><strong>No Recipient Installation</strong><br/><span style="font-size: 12px; font-weight: 400;">Simple recipient experience</span></div>
-          <div class="sec-badge"><strong>No Cloud Upload Required</strong><br/><span style="font-size: 12px; font-weight: 400;">Designed for local file protection</span></div>
-          <div class="sec-badge"><strong>Self-Contained Delivery</strong><br/><span style="font-size: 12px; font-weight: 400;">Protection travels with the locked file</span></div>
-        </div>
+
       </div>
     </div>
   </section>
