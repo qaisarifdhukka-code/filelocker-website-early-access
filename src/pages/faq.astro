@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  { q: "Does my client need to install any software?", a: "No — and that is the whole point. Your client opens one file in their web browser and types a password. Nothing downloads. Nothing installs. No account required. If they can visit a website, they can open their documents." },
+  { q: "What happens if the USB drive is lost or stolen?", a: "Nothing — and this is exactly what FileLocker is for. The files are protected with military-grade encryption. Without the correct password, whoever finds the drive cannot read a single byte of the contents. Mathematically guaranteed." },
+  { q: "What if I forget the password?", a: "Because FileLocker works completely offline with no servers involved, there is no password recovery option. This is a security feature, not a limitation — a recovery system would mean someone else could potentially access your files. Save the password in your password manager before clicking Lock. The optional hint feature also helps your client remember without giving away the password." },
+  { q: "Does my client need to know anything about technology?", a: "If they can open a website and type a word, they can open their files. The unlock screen is designed for non-technical clients. It has one password field and one button." },
+  { q: "Does FileLocker work on Mac?", a: "The desktop application for locking files runs on Windows 10 and 11. Your clients can unlock files on Windows, Mac, or Linux — any computer with a modern browser. macOS sender support is on the roadmap." },
+  { q: "How do I share the password with my client?", a: "Share it separately from the file — call them, text them, or tell them in person. Never write the password on the USB drive or include it in the same email as the locked file. Keeping the key separate from the lock is what makes this genuinely secure." },
+  { q: "Can I send entire folders, not just single files?", a: "Yes. Select any folder and FileLocker automatically bundles everything inside it before locking. Your client receives the complete folder structure when they unlock." },
+  { q: "Is my data stored anywhere?", a: "No. FileLocker operates entirely offline. No file, no password, and no document name ever touches any server. There is no cloud component and no internet connection required at any point — for you or your client." },
+  { q: "Is there a free trial?", a: "There is no free trial. Watch the 90-second demo video to see the complete workflow before joining Early Access. If FileLocker doesn't work exactly as described within 30 days of purchase, contact us for a full refund — no questions asked." },
+  { q: "What does one-time payment mean?", a: "You pay once. You own FileLocker permanently. No annual renewal. No subscription. No email reminding you to update your billing. Lifetime updates are included." },
+  { q: "What encryption does FileLocker use?", a: "FileLocker uses AES-256-GCM — the same standard used by the US government for classified information. Your password is processed using Argon2id before being used as the encryption key, making automated guessing attacks computationally infeasible." },
+  { q: "Can FileLocker work offline?", a: "Yes. FileLocker works entirely offline. No internet connection is required to lock a file. No internet connection is required for your client to unlock a file. The entire workflow happens on the physical devices involved." },
+  { q: "Is FileLocker available now?", a: "FileLocker is currently in Early Access preparation. Join the waitlist to be notified when the public release is available." },
+  { q: "How does FileLocker protect files sent by email?", a: "If you email the locked file, only someone with the correct password can open it. Even if the email is forwarded to the wrong person, or intercepted in transit, the locked file cannot be read without the exact password." },
+];
+---
+
+<Layout
+  title="FileLocker FAQ — Frequently Asked Questions"
+  description="Answers to the most common questions about FileLocker: how it works, what encryption it uses, whether recipients need to install anything, and how the early access works."
+  jsonLD={{
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  }}
+>
+  <Navbar currentPath="/faq" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">FAQ</div>
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about FileLocker, how it protects your files, and what to expect from Early Access.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="max-width:800px;">
+      <div class="faq-list" id="faqList">
+        {faqs.map(item => (
+          <div class="faq-item">
+            <div class="faq-q">{item.q}<span class="plus mono">+</span></div>
+            <div class="faq-a"><p>{item.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Still have a question?</h2>
+        <p>Contact us and we'll get back to you.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/contact" class="btn btn-primary">Contact Support &rarr;</a>
+          <a href="/early-access" class="btn btn-ghost">Join Early Access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement as HTMLElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-a') as HTMLElement;
+          if (a) a.style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const answer = item.querySelector('.faq-a') as HTMLElement;
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</Layout>

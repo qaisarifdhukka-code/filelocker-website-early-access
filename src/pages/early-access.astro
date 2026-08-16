@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Request FileLocker Access"
+  description="FileLocker is currently available to selected professionals handling sensitive client files. Request access to the Windows release."
+>
+  <Navbar currentPath="/early-access" />
+
+  <style>
+    .split-hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    @media (min-width: 900px) {
+      .split-hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+      }
+    }
+    .hero-form-card {
+      background: #fff;
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius-l);
+      padding: 32px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.05);
+    }
+    .hero-left {
+      text-align: left;
+    }
+    .hero-left h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+  </style>
+
+  <section class="page-hero" style="padding-top: 64px; padding-bottom: 64px;">
+    <div class="wrap">
+      <div class="split-hero">
+        <!-- LEFT SIDE -->
+        <div class="hero-left">
+          <div class="eyebrow" style="justify-content: flex-start; margin-bottom: 24px;">Private Availability</div>
+          <h1>Request access to FileLocker.</h1>
+          <p style="font-size: 20px; font-weight: 500; margin-bottom: 16px; color: var(--color-ink);">Secure file delivery for professionals handling sensitive client files.</p>
+          <p style="margin-bottom: 32px; color: var(--color-ink-soft); line-height: 1.6;">FileLocker is currently available to a selected group of professionals. Request access to the current Windows release and see how it fits into your document-delivery workflow.</p>
+          
+          <div style="font-size: 13px; font-weight: 700; color: var(--color-ink-soft); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; line-height: 1.6;">
+            Windows 10 &amp; 11 &middot; AES-256-GCM<br/>
+            Local Processing &middot; No Recipient Installation
+          </div>
+
+          <p style="font-size: 15px; font-weight: 600; color: var(--color-ink);">Request &rarr; Review &rarr; Get access</p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="hero-right">
+          <div class="hero-form-card">
+            <h2 style="font-size: 24px; margin-bottom: 8px;">Request FileLocker Access</h2>
+            <p style="font-size: 14px; color: var(--color-ink-soft); margin-bottom: 24px; line-height: 1.5;">Tell us a little about your work and how you currently deliver sensitive files.</p>
+            
+            <form class="ea-form" id="earlyAccessForm" action="https://formspree.io/f/mrpzaopj" method="POST" style="display: flex; flex-direction: column; gap: 16px; text-align: left;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">Full name<span style="color:var(--color-primary);">&nbsp;*</span></label>
+                <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; background: #fff;" />
+              </div>
+              
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">Work email<span style="color:var(--color-primary);">&nbsp;*</span></label>
+                <input type="email" name="email" placeholder="you@company.com" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; background: #fff;" />
+              </div>
+
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">Company / Organization</label>
+                <input type="text" name="company" placeholder="Company name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; background: #fff;" />
+              </div>
+
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">Industry<span style="color:var(--color-primary);">&nbsp;*</span></label>
+                <select name="industry" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; background: #fff; -webkit-appearance: auto;">
+                  <option value="" disabled selected>Select your industry</option>
+                  <option value="Accounting/Tax">Accounting / Tax</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Consulting">Consulting / Professional Services</option>
+                  <option value="Creative">Photography / Creative</option>
+                  <option value="Real Estate">Real Estate</option>
+                  <option value="HR/Payroll">HR / Payroll</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">How do you currently deliver sensitive files?<span style="color:var(--color-primary);">&nbsp;*</span></label>
+                <input type="text" name="current_method" placeholder="Email, USB drives, cloud storage..." required style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; background: #fff;" />
+              </div>
+              
+              <div>
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--color-ink);">What would you use FileLocker for?</label>
+                <textarea name="use_case" placeholder="Tell us briefly about your workflow..." rows="2" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-m); font-family: inherit; font-size: 15px; outline: none; resize: vertical; background: #fff;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Request Access &rarr;</button>
+            </form>
+            <p style="margin-top:16px; font-size: 12px; color: var(--color-ink-faint); text-align: center;">We use your information only to review and manage your FileLocker access request.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ACCESS IS LIMITED -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">Why access is limited</div>
+        <h2>A focused rollout for professionals.</h2>
+        <p>We're initially making FileLocker available to a focused group of professionals so we can ensure the product and support experience work well across real-world document delivery workflows.</p>
+      </div>
+      <div class="steps" style="max-width:900px;margin:0 auto;">
+        <div class="step">
+          <h3>Focused rollout</h3>
+          <p>We're starting with professionals who regularly handle confidential client files.</p>
+        </div>
+        <div class="step">
+          <h3>Direct support</h3>
+          <p>Initial users can contact the FileLocker team directly when they need assistance.</p>
+        </div>
+        <div class="step">
+          <h3>Product refinement</h3>
+          <p>Feedback from real workflows helps us improve the product before broader availability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">What you get</div>
+        <h2>Protection without changing your workflow.</h2>
+      </div>
+      <div class="feature-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); max-width:900px; margin:0 auto;">
+        <div class="feature">
+          <h3>Protect sensitive files</h3>
+          <p>Lock documents and folders before delivering them to clients.</p>
+        </div>
+        <div class="feature">
+          <h3>Simple recipient experience</h3>
+          <p>Recipients can unlock protected files using a supported browser without installing FileLocker.</p>
+        </div>
+        <div class="feature">
+          <h3>Local processing</h3>
+          <p>Protect files locally without requiring the original document to be uploaded to a FileLocker cloud service.</p>
+        </div>
+        <div class="feature">
+          <h3>Professional delivery</h3>
+          <p>Add your firm's identity to the unlock experience and deliver protected files using USB, email, or other transfer methods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">Who it's for</div>
+        <h2>Who can request access?</h2>
+        <p>We're currently prioritizing professionals who regularly deliver confidential files to clients or external recipients.</p>
+      </div>
+      <div class="persona-grid" style="max-width:1000px;margin:0 auto;">
+        <div class="persona-card">
+          <div class="persona-role mono">Legal</div>
+          <h4>Lawyers &amp; Law Firms</h4>
+          <p>Contracts, case files, discovery materials, client correspondence and other confidential files.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Accounting</div>
+          <h4>Accountants &amp; Tax Professionals</h4>
+          <p>Tax returns, financial statements, payroll records and other sensitive client files.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Professional Services</div>
+          <h4>Consultants &amp; Advisors</h4>
+          <p>Reports, proposals, presentations and sensitive client deliverables.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Creative</div>
+          <h4>Photographers &amp; Videographers</h4>
+          <p>Private photos, videos, raw files and other high-value client deliverables.</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:32px;font-size:15px;color:var(--color-ink-soft);"><strong>Don't see your industry? You can still request access.</strong></p>
+    </div>
+  </section>
+
+
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">What happens next?</div>
+        <h2>Your access request process.</h2>
+      </div>
+      <div class="steps" style="max-width:900px;margin:0 auto;">
+        <div class="step">
+          <span class="step-num mono">01 &mdash; REVIEW</span>
+          <h3>We review your request</h3>
+          <p>We check that your use case fits the current FileLocker rollout.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">02 &mdash; CONTACT</span>
+          <h3>We contact you</h3>
+          <p>If FileLocker is a good fit, we'll send you the next steps using your submitted email address.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">03 &mdash; GET STARTED</span>
+          <h3>Get started</h3>
+          <p>Download the current Windows release and start protecting your files.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Start protecting sensitive files.</h2>
+        <p>FileLocker is currently available to selected professionals. Request access to see if it's a fit for your workflow.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+        </div>
+        <div class="note mono">Windows 10 &amp; 11 &middot; One-time purchase &middot; No subscription</div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    const form = document.getElementById('earlyAccessForm') as HTMLFormElement;
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = 'Submitting...';
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            form.innerHTML = `
+              <div style="text-align:center; padding: 32px 0;">
+                <svg style="width:48px;height:48px;color:var(--color-primary);margin:0 auto 16px;display:block;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 style="margin-bottom:8px;font-size:20px;">Request Received</h3>
+                <p style="color:var(--color-ink-soft);font-size:15px;">Thank you for requesting access. We will review your workflow and be in touch soon.</p>
+              </div>
+            `;
+            const note = document.querySelector('.ea-form-note') as HTMLElement;
+            if (note) note.style.display = 'none';
+          } else {
+            throw new Error('Formspree returned an error');
+          }
+        } catch (error) {
+          btn.innerHTML = 'Error. Try again';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+</Layout>

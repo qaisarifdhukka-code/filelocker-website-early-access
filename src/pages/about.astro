@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="About FileLocker — Who We Are and Why We Built This"
+  description="FileLocker is a Windows desktop application for protecting sensitive files before delivery. Built to solve the real-world problem of secure document handoff for professionals."
+>
+  <Navbar currentPath="/about" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">About</div>
+      <h1>We built what we couldn't find.</h1>
+      <p>A simple, trustworthy way to protect sensitive files before handing them to a client.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="max-width:760px;">
+      <div class="eyebrow">The problem</div>
+      <h2 style="font-size:clamp(24px,2.8vw,32px);margin-bottom:24px;">Professionals share sensitive files every day without meaningful protection.</h2>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:20px;">A lawyer hands a client a USB drive with their case files. An accountant emails a tax return. A photographer delivers wedding photos. A healthcare provider shares patient records. In most of these cases, the files are completely unprotected — readable by anyone who intercepts them, finds the drive, or gets forwarded the email by accident.</p>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:20px;">The problem isn't that these professionals are careless. The existing tools weren't designed for this workflow. WinRAR requires your client to install software they've probably never used. Cloud storage puts your files on someone else's servers. Password-protected PDFs use weak, deprecated encryption. ZIP files with passwords use algorithms broken decades ago.</p>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:40px;">FileLocker is the tool we built to solve this properly: military-grade local encryption, a recipient experience that requires nothing more than a browser, and an interface designed for non-technical clients.</p>
+
+      <div class="eyebrow">What we believe</div>
+      <h2 style="font-size:clamp(24px,2.8vw,32px);margin-bottom:24px;">Security shouldn't be complicated.</h2>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:20px;">The best security solution is the one people actually use. If it's too complicated, too expensive, or requires your client to install something — it doesn't get used. FileLocker is designed around this constraint.</p>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:40px;">We believe that AES-256-GCM encryption and offline operation should be accessible to a lawyer, an accountant, or a photographer — not just to IT departments. FileLocker makes that possible.</p>
+
+      <div class="eyebrow">Contact</div>
+      <h2 style="font-size:clamp(24px,2.8vw,32px);margin-bottom:24px;">Get in touch.</h2>
+      <p style="font-size:16px;color:var(--color-ink-soft);margin-bottom:20px;">For support, questions, or feedback about FileLocker:</p>
+      <p style="font-size:16px;color:var(--color-ink);">Email: <a href="mailto:support@filelocker.online" style="color:var(--color-navy);">support@filelocker.online</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Join Early Access.</h2>
+        <p>FileLocker is preparing for its public launch. Be among the first to use it.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Join Early Access &rarr;</a>
+          <a href="/contact" class="btn btn-ghost">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

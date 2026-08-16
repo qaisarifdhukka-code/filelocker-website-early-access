@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="How FileLocker Works — Step-by-Step Secure File Delivery"
+  description="See the complete FileLocker workflow — from selecting a file and setting a password, to locking it and letting your client unlock it in a supported browser. No software required."
+>
+  <Navbar currentPath="/how-it-works" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">How it works</div>
+      <h1>A simple workflow for secure file delivery.</h1>
+      <p>Six steps from your original file to a protected delivery your client can unlock in a supported browser — without installing FileLocker.</p>
+    </div>
+  </section>
+
+  <!-- SENDER STEPS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Your workflow (you)</div>
+        <h2>Protect a file in minutes.</h2>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="num">01</div>
+          <div>
+            <h3>Select where to save</h3>
+            <p>Open FileLocker and choose where you want to save the locked file: a USB drive, a local disk, or a custom folder on your computer. FileLocker shows all connected drives and their available space.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">02</div>
+          <div>
+            <h3>Select your file or folder</h3>
+            <p>Browse to select an individual file or an entire folder. FileLocker supports a wide range of file types and folder structures.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">03</div>
+          <div>
+            <h3>Set your privacy options</h3>
+            <p>Choose whether to hide the original file name inside the locked file. Optionally enable automatic deletion of the original file from your computer after locking completes.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">04</div>
+          <div>
+            <h3>Set a password</h3>
+            <p>Create your own password or let FileLocker generate a strong, random one automatically. Optionally add a hint that will appear on the unlock screen to help your client remember — without revealing the password itself.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">05</div>
+          <div>
+            <h3>Lock the file</h3>
+            <p>FileLocker processes your selected files locally using AES-256-GCM encryption and creates a self-contained locked file ready to deliver. The locking process does not require an internet connection.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">06</div>
+          <div>
+            <h3>Deliver it your way</h3>
+            <p>Transfer the locked file to your client using the method that works best for your workflow: USB drive, email, file transfer, or another delivery method. The protection travels with the file, regardless of how it's delivered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECIPIENT STEPS -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Recipient workflow (your client)</div>
+        <h2>Your recipient doesn't need to learn new software.</h2>
+        <p>Your recipient doesn't need technical expertise to unlock the file.</p>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="num">01</div>
+          <div>
+            <h3>Receive the locked file</h3>
+            <p>Your client receives the locked file through whichever delivery method you used — USB drive, email, or another transfer method.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">02</div>
+          <div>
+            <h3>Open it in a supported browser</h3>
+            <p>They open the locked file directly in Chrome, Edge, Safari, or Firefox. No additional software download. No account. No FileLocker installation.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">03</div>
+          <div>
+            <h3>Enter the password</h3>
+            <p>They type the password you set. If you added a hint, it's displayed on the unlock screen. The file is decrypted inside their browser as part of the unlock process; the protected file does not need to be uploaded to a FileLocker server.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">04</div>
+          <div>
+            <h3>Save the recovered document</h3>
+            <p>The recovered document is saved to their computer. They choose where to save it, and the process completes locally without requiring cloud storage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY OPTIONS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Delivery</div>
+        <h2>Deliver it your way.</h2>
+        <p>Once your file is locked, the protection travels with the file. You can transfer the locked file using the method that works best for your workflow.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num mono">USB DRIVE</span>
+          <h3>Physical handoff</h3>
+          <p>Write the locked file to a USB drive and hand it over in person. If the drive is lost, the contents remain completely unreadable without the password.</p>
+          <div class="step-tag mono">A PRACTICAL OPTION FOR PHYSICAL DELIVERY</div>
+        </div>
+        <div class="step">
+          <span class="step-num mono">EMAIL</span>
+          <h3>Email attachment</h3>
+          <p>Attach the locked file to an email. The recipient still needs the password to unlock the protected file.</p>
+          <div class="step-tag mono">SHARE PASSWORD SEPARATELY FROM THE FILE</div>
+        </div>
+        <div class="step">
+          <span class="step-num mono">OTHER TRANSFER METHODS</span>
+          <h3>Other transfer methods</h3>
+          <p>Transfer the locked file using the file-sharing or transfer service that fits your workflow.</p>
+          <div class="step-tag mono">PROTECTION TRAVELS WITH THE FILE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP SCREENSHOTS -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">See the interface</div>
+        <h2>FileLocker in action.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto;">
+        <figure>
+          <img src="/screenshots/filelocker-select-destination-usb-drive.png" alt="FileLocker Select Destination screen showing local disk, locked drive, and USB drive options with storage capacity" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+          <figcaption style="font-size:12.5px;color:var(--color-ink-faint);margin-top:10px;text-align:center;">01 Select Destination</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/filelocker-choose-file-or-folder-to-lock.png" alt="FileLocker file and folder selection screen" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+          <figcaption style="font-size:12.5px;color:var(--color-ink-faint);margin-top:10px;text-align:center;">02 Select File</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/filelocker-set-vault-password-screen.png" alt="FileLocker Set Password screen with password strength indicator and optional hint field" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+          <figcaption style="font-size:12.5px;color:var(--color-ink-faint);margin-top:10px;text-align:center;">03 Set Password</figcaption>
+        </figure>
+        <figure>
+          <img src="/screenshots/filelocker-encrypting-files-aes256-progress.png" alt="FileLocker encryption progress screen showing AES-256-GCM processing" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+          <figcaption style="font-size:12.5px;color:var(--color-ink-faint);margin-top:10px;text-align:center;">04 Encrypt</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Ready to protect your first file?</h2>
+        <p>FileLocker is currently available to selected professionals. Request access to get started.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+          <a href="/features" class="btn btn-ghost">Explore Features &rarr;</a>
+        </div>
+        <div class="note mono">WINDOWS 10 &amp; 11 &middot; SECURE FILE DELIVERY</div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

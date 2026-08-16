@@ -1,0 +1,453 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const softwareLD = {
+  "@type": "SoftwareApplication",
+  "name": "FileLocker",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "SecurityApplication",
+  "description": "FileLocker protects sensitive files locally with AES-256-GCM encryption before you deliver them. Recipients unlock files in any browser — no software installation required.",
+  "url": "https://filelocker.online",
+  "offers": {
+    "@type": "Offer",
+    "price": "29",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/PreOrder"
+  }
+};
+
+const videoLD = {
+  "@type": "VideoObject",
+  "name": "FileLocker Demo — Secure File Delivery in 90 Seconds",
+  "description": "See how FileLocker encrypts sensitive files locally, creates a protected delivery file, and lets recipients unlock their files without installing FileLocker.",
+  "thumbnailUrl": "https://filelocker.online/screenshots/filelocker-select-destination-usb-drive.png",
+  "uploadDate": "2026-08-01",
+  "duration": "PT1M30S",
+  "contentUrl": "https://filelocker.online/Videos/demo.mp4",
+  "embedUrl": "https://filelocker.online/Videos/demo.mp4"
+};
+---
+
+<Layout
+  title="FileLocker — Secure File Delivery Without the Complexity"
+  description="FileLocker protects sensitive files locally before you deliver them. Lock any file with a password — recipients unlock it in any browser, no software required."
+  jsonLD={softwareLD}
+>
+  <Navbar currentPath="/" />
+
+  <!-- HERO -->
+  <section class="video-hero">
+    <div class="wrap">
+      <div class="video-hero-header">
+        <div class="eyebrow center" style="margin-bottom: 16px; letter-spacing: 0.1em; font-weight: 600;">SECURE FILE DELIVERY</div>
+        <h1 style="font-size: clamp(36px, 4.5vw, 48px); margin-bottom: 16px; line-height: 1.15; letter-spacing: -0.02em;">Protect sensitive files before you<br />deliver them.</h1>
+        <p class="video-hero-desc" style="font-size: 18px; max-width: 760px; margin: 0 auto 24px; color: var(--color-ink-soft);">
+          FileLocker lets you lock sensitive documents before delivery, so the protection travels with the file during the handoff.
+        </p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+          <button type="button" id="demoVideoBtn2" class="btn btn-ghost" style="display: flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Demo
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Demo Player -->
+      <div id="demoVideoBtn" class="demo-player" role="button" aria-label="Play FileLocker demo video" tabindex="0">
+        <img
+          src="/screenshots/filelocker-select-destination-usb-drive.png"
+          alt="FileLocker app — Select Destination screen showing local disk, locked drive, and USB drive options"
+          class="demo-poster"
+          width="880"
+          height="520"
+          loading="eager"
+        />
+        <div class="demo-play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="demo-pill">&#9654;&nbsp;&nbsp;90-second product demo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="FileLocker demo video">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" id="videoModalClose" aria-label="Close video">&times;</button>
+      <video id="demoVideo" controls preload="metadata" width="100%">
+        <source src="/Videos/demo.mp4" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
+  </div>
+
+  <!-- VIDEO JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(videoLD)} />
+
+
+  <!-- THE PROBLEM -->
+  <section id="problem">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The problem</div>
+        <h2>Sensitive files shouldn't be delivered unprotected.</h2>
+        <p>Emailing a confidential document or handing someone a USB drive doesn't give you much control over what happens next. A file can be copied, forwarded, misplaced, or accessed by someone who wasn't supposed to receive it.</p>
+      </div>
+      <div class="compare">
+        <div class="compare-col without">
+          <span class="compare-title">Without FileLocker</span>
+          <ul>
+            <li>Plain files on a USB drive can be opened immediately if the drive is lost.</li>
+            <li>Sending the original document by email leaves the document itself unprotected.</li>
+            <li>Traditional file archives can add friction for recipients who don't have compatible software.</li>
+            <li>Cloud-based workflows may require uploading sensitive documents to a third-party service.</li>
+          </ul>
+        </div>
+        <div class="compare-col with">
+          <span class="compare-title mono">With FileLocker</span>
+          <ul>
+            <li><strong>Password-protected delivery</strong> &mdash; the locked file requires the correct password to recover the original.</li>
+            <li><strong>No recipient installation</strong> &mdash; recipients can open the locked file in a supported browser.</li>
+            <li><strong>Local processing</strong> &mdash; protect your files directly on your computer without uploading the original document to a FileLocker cloud service.</li>
+            <li><strong>Simple delivery</strong> &mdash; send or hand over the locked file using the method that works for you.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How it works</div>
+        <h2>Simple for you. Straightforward for them.</h2>
+        <p>A simple workflow for protecting sensitive files before you deliver them.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num mono">01 &mdash; SELECT DESTINATION</span>
+          <h3>Choose where to save.</h3>
+          <p>Select a USB drive, local disk, or custom folder where you want the locked file to be saved.</p>
+          <div class="step-tag mono">USB DRIVE &middot; LOCAL DISK &middot; CUSTOM FOLDER</div>
+        </div>
+        <div class="step">
+          <span class="step-num mono">02 &mdash; SELECT FILE</span>
+          <h3>Choose your file or folder.</h3>
+          <p>Select an individual file or an entire folder to protect.</p>
+          <div class="step-tag mono">FILES &middot; FOLDERS</div>
+        </div>
+        <div class="step">
+          <span class="step-num mono">03 &mdash; SET PASSWORD</span>
+          <h3>Set a password.</h3>
+          <p>Create your own password or let FileLocker generate one automatically. Add an optional hint to help the recipient remember it.</p>
+          <div class="step-tag mono">PASSWORD PROTECTION &middot; BUILT-IN GENERATOR</div>
+        </div>
+      </div>
+      <div style="margin-top:1px;">
+        <div class="steps" style="border-top:none;border-radius:0 0 var(--radius-m) var(--radius-m);">
+          <div class="step">
+            <span class="step-num mono">04 &mdash; LOCK THE FILE</span>
+            <h3>Protect it locally.</h3>
+            <p>FileLocker processes your selected files locally and creates a self-contained locked file ready to deliver.</p>
+            <div class="step-tag mono">AES-256-GCM &middot; LOCAL PROCESSING</div>
+          </div>
+          <div class="step">
+            <span class="step-num mono">05 &mdash; HAND IT OFF</span>
+            <h3>Deliver the locked file.</h3>
+            <p>Transfer the locked file using the method that works best for you &mdash; USB drive, email, file transfer, or another delivery method.</p>
+            <div class="step-tag mono">USB &middot; EMAIL &middot; FILE TRANSFER</div>
+          </div>
+          <div class="step">
+            <span class="step-num mono">06 &mdash; RECIPIENT UNLOCKS</span>
+            <h3>They open one file. Done.</h3>
+            <p>The recipient opens the locked file, enters the password, and saves the recovered document.</p>
+            <div class="step-tag mono">CHROME &middot; EDGE &middot; SAFARI &middot; FIREFOX</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/how-it-works" class="btn btn-ghost">See the full walkthrough &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Features</div>
+        <h2>Built around the way you already work.</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/></svg></div>
+          <h3>Local file processing.</h3>
+          <p>FileLocker is designed to process and protect files locally, without requiring the original document to be uploaded to a FileLocker cloud service.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3>Automatic password generation.</h3>
+          <p>Let FileLocker generate a strong password automatically instead of creating one yourself.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>No recipient installation.</h3>
+          <p>Recipients don't need to install FileLocker or create an account to unlock a protected file.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+          <h3>Keep the original filename private.</h3>
+          <p>Optionally hide the original filename so the protected file doesn't reveal the document's original name.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 9h18"/></svg></div>
+          <h3>Protect files or entire folders.</h3>
+          <p>Protect an individual document or select an entire folder when you need to deliver multiple files.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <h3>Automatically remove the original.</h3>
+          <p>Optionally delete the original file after the locking process is complete.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/features" class="btn btn-ghost">See all features &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="security-section">
+        <div>
+          <div class="eyebrow">Security</div>
+          <h2>Protection built into the file delivery process.</h2>
+          <p>FileLocker is designed to protect sensitive files before you deliver them.</p>
+          
+          <h4 style="margin-top: 24px; font-size: 16px;">AES-256-GCM encryption</h4>
+          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">FileLocker uses AES-256-GCM to protect the contents of the locked file.</p>
+          
+          <h4 style="margin-top: 24px; font-size: 16px;">Argon2id key derivation</h4>
+          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Passwords are processed using Argon2id as part of the key-derivation process.</p>
+
+          <h4 style="margin-top: 24px; font-size: 16px;">Local processing</h4>
+          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Files are processed locally as part of the locking workflow rather than requiring the original document to be uploaded to a FileLocker cloud service.</p>
+
+          <h4 style="margin-top: 24px; font-size: 16px;">Password-protected recovery</h4>
+          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">The protected file requires the correct password to recover the original document.</p>
+
+          <h4 style="margin-top: 24px; font-size: 16px;">Browser-based unlocking</h4>
+          <p style="margin-top: 8px; font-size: 15px; color: var(--color-ink-soft);">Recipients can unlock the protected file using a supported modern browser without installing the FileLocker desktop application.</p>
+
+          <div style="margin-top:24px;">
+            <a href="/security" class="btn btn-ghost" style="border-color:rgba(255,255,255,0.2);color:#F2EFE6;">Read full security details &rarr;</a>
+          </div>
+        </div>
+        <div class="badge-grid" style="align-content: start;">
+          <div class="sec-badge"><strong>AES-256-GCM</strong><br/><span style="font-size: 12px; font-weight: 400;">Encryption</span></div>
+          <div class="sec-badge"><strong>Argon2id</strong><br/><span style="font-size: 12px; font-weight: 400;">Password-based key derivation</span></div>
+          <div class="sec-badge"><strong>Local Processing</strong><br/><span style="font-size: 12px; font-weight: 400;">Files protected on your device</span></div>
+          <div class="sec-badge"><strong>No Recipient Installation</strong><br/><span style="font-size: 12px; font-weight: 400;">Simple recipient experience</span></div>
+          <div class="sec-badge"><strong>No Cloud Upload Required</strong><br/><span style="font-size: 12px; font-weight: 400;">Designed for local file protection</span></div>
+          <div class="sec-badge"><strong>Self-Contained Delivery</strong><br/><span style="font-size: 12px; font-weight: 400;">Protection travels with the locked file</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Who it's for</div>
+        <h2>Built for professionals who deliver sensitive files.</h2>
+        <p>If your clients receive confidential files from you, FileLocker is designed to make the delivery process simpler and more protected.</p>
+      </div>
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-role mono">Legal</div>
+          <h4>Lawyers &amp; Law Firms</h4>
+          <p>Protect contracts, case documents, client records, and other sensitive files before delivering them to clients.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Finance</div>
+          <h4>Accountants &amp; Tax Professionals</h4>
+          <p>Protect tax returns, financial statements, and other confidential client documents before delivery.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Professional Services</div>
+          <h4>Consultants &amp; Advisors</h4>
+          <p>Protect reports, business documents, proposals, and other sensitive client deliverables.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Creative</div>
+          <h4>Photographers &amp; Videographers</h4>
+          <p>Protect private photos, videos, and other client deliverables before handing them over.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/who-its-for" class="btn btn-ghost">Learn more about your use case &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST ACCESS -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="ea-form-section">
+        <div class="eyebrow">Access</div>
+        <h2>Currently available to selected professionals.</h2>
+        <p>FileLocker is currently available to a selected group of professionals who regularly handle sensitive client files. We're gradually expanding availability as we refine the product and support more workflows.</p>
+
+        <h4 style="margin-top: 24px;">Request access</h4>
+        <p style="margin-bottom: 24px;">Tell us a little about your work and how you currently deliver sensitive files.</p>
+        
+        <form class="ea-form" id="earlyAccessForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <a href="/early-access" class="btn btn-primary" style="display:inline-block;">Request Access &rarr;</a>
+        </form>
+        <p class="ea-form-note">No spam. We'll only contact you about your FileLocker access request and product availability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TEASER -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">Pricing</div>
+        <h2>Simple pricing. No subscription.</h2>
+      </div>
+      <div class="ea-teaser">
+        <div style="font-size:12px;font-weight:700;color:var(--color-ink-faint);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">FileLocker</div>
+        <div class="price-amount">$29</div>
+        <div class="price-note" style="margin-bottom:8px;">one-time purchase at launch</div>
+        <p style="font-size:14px;color:var(--color-ink-faint);margin-bottom:28px;">FileLocker is currently available to selected professionals. Request access to learn more about availability and purchase options.</p>
+        
+        <ul style="text-align:left; max-width: 300px; margin: 0 auto 28px; list-style: none; padding: 0; color: var(--color-ink-soft);">
+          <li style="margin-bottom: 8px;">&check; No recurring subscription</li>
+          <li style="margin-bottom: 8px;">&check; Windows application</li>
+          <li style="margin-bottom: 8px;">&check; Secure file delivery workflow</li>
+          <li style="margin-bottom: 8px;">&check; Recipient doesn't need the FileLocker desktop application</li>
+        </ul>
+
+        <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="/pricing" class="btn btn-ghost">See full pricing details &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions answered.</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <div class="faq-q">Does my client need to install FileLocker?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p><strong>No.</strong> The recipient can open the locked file in a supported browser without installing the FileLocker desktop application.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens if the USB drive is lost or stolen?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>The original file is stored inside the protected locked file. The recipient needs the correct password to recover the protected document.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does FileLocker upload my files?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>FileLocker is designed to process and protect your files locally. The original document does not need to be uploaded to a FileLocker cloud service.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I forget the password?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>The password is required to unlock the protected file. Make sure you store or share the password securely before delivering the file.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I protect folders?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p><strong>Yes.</strong> You can select an individual file or an entire folder to protect.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where can I save the locked file?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>You can save it to a local drive, USB drive, or custom folder.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is FileLocker available now?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p><strong>FileLocker is currently available to selected professionals.</strong> Request access to learn more and check availability.</p></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/faq" class="btn btn-ghost">See all questions &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Your files are yours. Protect them before you deliver them.</h2>
+        <p>Lock sensitive files. Deliver them securely.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+          <a href="/how-it-works" class="btn btn-ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement as HTMLElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-a') as HTMLElement;
+          if (a) a.style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const answer = item.querySelector('.faq-a') as HTMLElement;
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Video modal
+    const modal = document.getElementById('videoModal') as HTMLElement;
+    const video = document.getElementById('demoVideo') as HTMLVideoElement;
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      video?.play();
+    }
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      video?.pause();
+      if (video) video.currentTime = 0;
+    }
+
+    ['demoVideoBtn', 'demoVideoBtn2'].forEach(id => {
+      const btn = document.getElementById(id);
+      btn?.addEventListener('click', openModal);
+      btn?.addEventListener('keydown', (e: Event) => {
+        const ke = e as KeyboardEvent;
+        if (ke.key === 'Enter' || ke.key === ' ') { e.preventDefault(); openModal(); }
+      });
+    });
+
+    document.getElementById('videoModalClose')?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</Layout>

@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Who FileLocker Is For — Lawyers, Accountants, Consultants, Photographers"
+  description="FileLocker is built for legal professionals, accountants, consultants, photographers, and anyone who regularly delivers sensitive files to clients."
+>
+  <Navbar currentPath="/who-its-for" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">Who it's for</div>
+      <h1>Built for professionals who deliver sensitive files.</h1>
+      <p>If your clients regularly receive confidential files from you, FileLocker is designed for your workflow.</p>
+    </div>
+  </section>
+
+  <!-- PERSONAS -->
+  <section id="lawyers">
+    <div class="wrap">
+      <div class="split-section">
+        <div>
+          <div class="persona-role mono" style="font-size:12px;margin-bottom:14px;">Legal</div>
+          <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:18px;">Lawyers &amp; Law Firms</h2>
+          <p style="font-size:16px;color:var(--color-ink-soft);line-height:1.6;margin-bottom:16px;">Protect case files, contracts, discovery materials, client correspondence, and other confidential files before delivering them to clients.</p>
+          <p style="font-size:14px;color:var(--color-ink-soft);font-weight:500;"><strong>Typical files:</strong> Contracts &middot; Case files &middot; Discovery materials &middot; Client correspondence &middot; Settlement agreements &middot; Evidence</p>
+        </div>
+        <img src="/screenshots/filelocker-select-destination-usb-drive.png" alt="FileLocker destination selection screen for delivering files" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="accountants">
+    <div class="wrap">
+      <div class="split-section">
+        <img src="/screenshots/filelocker-set-vault-password-screen.png" alt="FileLocker password setup screen for delivering financial records" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+        <div>
+          <div class="persona-role mono" style="font-size:12px;margin-bottom:14px;">Finance</div>
+          <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:18px;">Accountants &amp; Tax Professionals</h2>
+          <p style="font-size:16px;color:var(--color-ink-soft);line-height:1.6;margin-bottom:16px;">Protect tax returns, financial statements, invoices, payroll records, and other confidential client files before delivery.</p>
+          <p style="font-size:14px;color:var(--color-ink-soft);font-weight:500;"><strong>Typical files:</strong> Tax returns &middot; Financial statements &middot; Invoices &middot; Payroll records &middot; Audit reports &middot; Client financial data</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultants">
+    <div class="wrap">
+      <div class="split-section">
+        <div>
+          <div class="persona-role mono" style="font-size:12px;margin-bottom:14px;">Professional Services</div>
+          <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:18px;">Consultants &amp; Advisors</h2>
+          <p style="font-size:16px;color:var(--color-ink-soft);line-height:1.6;margin-bottom:16px;">Protect reports, proposals, business documents, and other sensitive client deliverables before sharing them with external stakeholders.</p>
+          <p style="font-size:14px;color:var(--color-ink-soft);font-weight:500;"><strong>Typical files:</strong> Reports &middot; Proposals &middot; Business documents &middot; Presentations &middot; Client deliverables</p>
+        </div>
+        <img src="/screenshots/filelocker-select-files-to-encrypt.png" alt="FileLocker file selection screen for consultants" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="photographers">
+    <div class="wrap">
+      <div class="split-section">
+        <img src="/screenshots/filelocker-encrypting-files-aes256-progress.png" alt="FileLocker encrypting creative deliverables" loading="lazy" style="border-radius:var(--radius-m);border:1px solid var(--color-line);width:100%;" />
+        <div>
+          <div class="persona-role mono" style="font-size:12px;margin-bottom:14px;">Creative</div>
+          <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:18px;">Photographers &amp; Videographers</h2>
+          <p style="font-size:16px;color:var(--color-ink-soft);line-height:1.6;margin-bottom:16px;">Protect high-value client deliverables before handing them over, including photo collections, videos, raw files, and final exports.</p>
+          <p style="font-size:14px;color:var(--color-ink-soft);font-weight:500;"><strong>Typical deliverables:</strong> Wedding photos &middot; Event videos &middot; Private shoots &middot; Raw files &middot; Commercial assets &middot; Final exports</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">More use cases</div>
+        <h2>Also useful for teams handling sensitive files.</h2>
+      </div>
+      <div class="persona-grid grid-3">
+        <div class="persona-card">
+          <div class="persona-role mono">HR &amp; Payroll</div>
+          <h4>HR &amp; Payroll</h4>
+          <p>Protect payroll data, employee records, contracts, and other sensitive files before delivery.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Real Estate</div>
+          <h4>Real Estate</h4>
+          <p>Protect financial documents, agreements, client information, and other sensitive files before sharing them.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-role mono">Other</div>
+          <h4>Other Professionals</h4>
+          <p>FileLocker can also be useful for individuals and organizations that regularly deliver files containing confidential or sensitive information.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Protect your next client delivery.</h2>
+        <p>FileLocker is currently available to selected professionals. Request access to get started.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Request Access &rarr;</a>
+          <a href="/how-it-works" class="btn btn-ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 980px) {
+    .split-section { grid-template-columns: 1fr; }
+  }
+</style>

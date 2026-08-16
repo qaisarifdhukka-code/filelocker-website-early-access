@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="FileLocker Security — AES-256-GCM Encryption, Argon2id, 100% Offline"
+  description="FileLocker uses AES-256-GCM encryption and Argon2id key derivation. All encryption and decryption happens locally on your device — no server, no cloud, no data transmission."
+>
+  <Navbar currentPath="/security" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">Security</div>
+      <h1>Military-grade is not marketing. It's mathematics.</h1>
+      <p>How FileLocker protects your files — and what actually happens during encryption and decryption.</p>
+    </div>
+  </section>
+
+  <!-- HOW FILELOCKER PROTECTS -->
+  <section>
+    <div class="wrap">
+      <div class="security-section">
+        <div>
+          <div class="eyebrow">Encryption</div>
+          <h2>AES-256-GCM: the same standard used by governments.</h2>
+          <p>FileLocker uses AES-256-GCM — the encryption standard approved by the US government for classified information. It is used by banks, governments, and the US military. Without the exact password, the files are completely unreadable — not difficult to read, not expensive to break. Mathematically impossible to open without the correct key.</p>
+          <p>GCM (Galois/Counter Mode) adds authentication on top of encryption — meaning that if even a single byte of the locked file is changed or corrupted, decryption fails. This guarantees the integrity of your delivered file.</p>
+        </div>
+        <div class="badge-grid">
+          <div class="sec-badge">AES-256-GCM Encryption</div>
+          <div class="sec-badge">Argon2id Key Derivation</div>
+          <div class="sec-badge">HIPAA Workflow Support</div>
+          <div class="sec-badge">GDPR Article 32</div>
+          <div class="sec-badge">Zero Data Transmission</div>
+          <div class="sec-badge">100% Offline</div>
+          <div class="sec-badge">No Cloud Infrastructure</div>
+          <div class="sec-badge">Web Crypto API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT FILELOCKER DOES -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">Local processing</div>
+        <h2>Everything happens on your device.</h2>
+        <p>FileLocker is designed around a simple principle: protect the document before you send it. Your original file is processed locally and converted into a protected, self-contained locked file.</p>
+      </div>
+      <div class="grid-3">
+        <div>
+          <span class="step-num mono">LOCKING</span>
+          <h3 style="font-size:19px;margin-bottom:12px;">What happens when you lock a file</h3>
+          <p style="font-size:14.8px;color:var(--color-ink-soft);">Your password is processed through Argon2id to produce an encryption key. The original file is encrypted using AES-256-GCM. The result is a single locked file containing the encrypted contents. No copy of your password or encryption key is stored anywhere.</p>
+        </div>
+        <div>
+          <span class="step-num mono">TRANSMISSION</span>
+          <h3 style="font-size:19px;margin-bottom:12px;">What happens during delivery</h3>
+          <p style="font-size:14.8px;color:var(--color-ink-soft);">The locked file contains only the encrypted data. It is completely inert. Even if it is intercepted, copied, or stolen in transit — without the password, whoever has the file cannot read a single byte of its contents.</p>
+        </div>
+        <div>
+          <span class="step-num mono">UNLOCKING</span>
+          <h3 style="font-size:19px;margin-bottom:12px;">What happens when your client unlocks</h3>
+          <p style="font-size:14.8px;color:var(--color-ink-soft);">The locked file opens in your client's browser. Their password is processed through Argon2id. The browser's built-in Web Crypto API decrypts the contents entirely inside the browser tab. No password, no decrypted file, and no data of any kind is transmitted to any server.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARGON2ID -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Password security</div>
+        <h2>Passwords that resist brute force attacks.</h2>
+        <p>Your password is not stored as-is. FileLocker transforms it using Argon2id — a system designed to make automated password-guessing attacks computationally impossible, even on modern hardware with dedicated GPUs.</p>
+      </div>
+      <div class="threat-list">
+        <div class="threat-row">
+          <span class="label">USB drive lost or stolen</span>
+          <span class="status protected">Protected</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">File intercepted during email delivery</span>
+          <span class="status protected">Protected</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">Brute force password attack</span>
+          <span class="status protected">Protected via Argon2id</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">File tampered in transit</span>
+          <span class="status protected">Detected via GCM authentication</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">Cloud server breach</span>
+          <span class="status protected">Not applicable — no cloud used</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">Password forgotten by sender</span>
+          <span class="status by-design">No recovery — by design</span>
+        </div>
+        <div class="threat-row">
+          <span class="label">Password shared insecurely (same channel as file)</span>
+          <span class="status by-design">User responsibility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Compliance workflows</div>
+        <h2>Designed for professionals handling sensitive data.</h2>
+        <p>FileLocker is suitable for professionals handling confidential information who need to demonstrate that documents were delivered with appropriate protection measures.</p>
+      </div>
+      <div class="feature-grid" style="max-width:760px;">
+        <div class="feature">
+          <h3>HIPAA Workflows</h3>
+          <p>FileLocker's local encryption and offline operation supports workflows requiring that protected health information (PHI) is transmitted with appropriate safeguards.</p>
+        </div>
+        <div class="feature">
+          <h3>GDPR Article 32</h3>
+          <p>GDPR Article 32 requires appropriate technical measures for personal data security. AES-256-GCM encryption and local processing support these requirements.</p>
+        </div>
+        <div class="feature">
+          <h3>ABA Rule 1.6</h3>
+          <p>ABA Rule 1.6 requires lawyers to make reasonable efforts to prevent unauthorized disclosure of client information. FileLocker's encrypted delivery supports this obligation.</p>
+        </div>
+      </div>
+      <p style="margin-top:24px;font-size:13.5px;color:var(--color-ink-faint);">Note: FileLocker supports compliant workflows. It does not constitute legal advice or formal compliance certification. Consult your compliance officer or legal counsel for guidance specific to your situation.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Protection that starts before delivery.</h2>
+        <p>Join Early Access and be notified when FileLocker is available.</p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:18px;">
+          <a href="/early-access" class="btn btn-primary">Join Early Access &rarr;</a>
+          <a href="/how-it-works" class="btn btn-ghost">See how it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy — FileLocker"
+  description="FileLocker Privacy Policy. FileLocker processes all files locally on your device. No file content, password, or personal data is collected or transmitted."
+>
+  <Navbar currentPath="/privacy" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>How FileLocker handles your data — and why there isn't much to say.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-content">
+        <div class="legal-updated">Last updated: August 2026</div>
+
+        <h2>Summary</h2>
+        <p>FileLocker is a desktop application designed to process protected files locally on your device. The application does not require uploading your files to a FileLocker cloud service as part of the normal locking and unlocking workflow.</p>
+        <p>The FileLocker website may collect limited information that you voluntarily provide, such as your email address when requesting access or contacting support.</p>
+
+        <h2>Information the FileLocker application does not collect</h2>
+        <ul>
+          <li>Your files or their contents</li>
+          <li>Your encryption passwords</li>
+          <li>The names of files you protect</li>
+          <li>Information about what you're encrypting</li>
+          <li>Desktop application telemetry or usage data</li>
+        </ul>
+
+        <h2>Information the website may collect</h2>
+        <p>The FileLocker website may use analytics services to understand how visitors use the site. Depending on the service, this may include information such as page views, referring pages, browser/device information, and approximate location.</p>
+
+        <h2>Access requests and email</h2>
+        <p>If you submit an access request or contact FileLocker support, we use your email address to respond to your request, provide information about your access, and communicate with you about the service.</p>
+        <p>We do not sell your email address. You can contact us at <a href="mailto:support@filelocker.online" style="color:var(--color-navy);">support@filelocker.online</a> if you have questions about how your information is used.</p>
+
+        <h2>License and purchase information</h2>
+        <p>If you purchase or activate FileLocker, we may process information necessary to provide and manage your license, such as your email address, license information, purchase information, and activation status. The FileLocker application may also process technical information necessary to associate a license with an authorized installation.</p>
+
+        <h2>How FileLocker processes protected files</h2>
+        <p>As part of the normal locking workflow, FileLocker does not require file contents, encryption passwords, or document metadata to be uploaded to a FileLocker cloud service.</p>
+        <p>The locking process does not require an internet connection. Locked files are saved to locations selected by the user, such as local drives, folders, or connected storage devices.</p>
+
+        <h2>How the unlock experience works</h2>
+        <p>The recipient unlocks the protected file locally in a supported browser. The browser uses the Web Crypto API to perform the decryption locally. The protected file and password do not need to be uploaded to a FileLocker cloud service during the unlock process.</p>
+
+        <h2>Analytics and third-party services</h2>
+        <p>The filelocker.online website may use third-party services (such as payment processors, email delivery services, or analytics providers) to facilitate our business operations. These third parties process information only as required to provide their specific services.</p>
+
+        <h2>Data retention</h2>
+        <p>We retain information submitted through the website for as long as reasonably necessary to provide the requested service, manage access, provide support, comply with legal obligations, and resolve disputes.</p>
+
+        <h2>Security</h2>
+        <p>We take reasonable measures to protect information we process through the website and services. FileLocker is designed so that protected file contents and encryption passwords do not need to be uploaded to a FileLocker cloud service as part of the normal locking and unlocking workflow.</p>
+        <p>No method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security of information processed through the website or services.</p>
+
+        <h2>Your privacy rights</h2>
+        <p>Depending on where you are located, you may have rights regarding your personal information, including rights to access, correct, delete, or restrict certain uses of your information. To make a privacy-related request, contact <a href="mailto:support@filelocker.online" style="color:var(--color-navy);">support@filelocker.online</a>.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. The most recent version will always be published at filelocker.online/privacy.</p>
+
+        <h2>Contact</h2>
+        <p>For privacy-related questions: <a href="mailto:support@filelocker.online" style="color:var(--color-navy);">support@filelocker.online</a></p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

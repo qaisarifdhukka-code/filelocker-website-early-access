@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="FileLocker Pricing — One-Time Purchase, No Subscription"
+  description="FileLocker is offered as a $29 one-time purchase with no recurring subscription. Protect sensitive files without managing monthly fees."
+>
+  <Navbar currentPath="/pricing" />
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow center">Pricing</div>
+      <h1>One-time purchase. No subscription.</h1>
+      <p>FileLocker is planned as a one-time purchase with no recurring subscription.</p>
+    </div>
+  </section>
+
+  <!-- PRICING CARD -->
+  <section>
+    <div class="wrap">
+      <div class="price-card">
+        <div class="price-name">FileLocker</div>
+        <div class="price-amount">$29</div>
+        <div class="price-note">one-time purchase &middot; no subscription</div>
+        <ul class="price-list">
+          <li>FileLocker desktop app for Windows 10 &amp; 11</li>
+          <li>AES-256-GCM file protection</li>
+          <li>No FileLocker installation for recipients</li>
+          <li>Custom branding</li>
+          <li>Auto-delete original option</li>
+          <li>Hidden filename option</li>
+          <li>Built-in password generator</li>
+          <li>Password hints</li>
+          <li>File and folder protection</li>
+          <li>Email support</li>
+        </ul>
+        <a href="/early-access" class="btn btn-primary btn-full">Request Access &rarr;</a>
+        <p style="font-size:12.5px;color:var(--color-ink-faint);margin-top:16px;text-align:center;">Current availability is limited to selected professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <div class="eyebrow center">Our approach</div>
+        <h2>Simple pricing by design.</h2>
+        <p>We want FileLocker to be straightforward: purchase it once without managing another recurring software subscription.</p>
+      </div>
+      <div class="steps" style="max-width:800px;margin:0 auto;">
+        <div class="step">
+          <span class="step-num mono">ONE PAYMENT</span>
+          <h3>Pay once. No recurring subscription.</h3>
+          <p>The planned $29 purchase provides access to FileLocker without monthly fees or annual renewal.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">UPDATES</span>
+          <h3>Product updates</h3>
+          <p>Product updates will be provided according to the FileLocker update policy.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">SUPPORT</span>
+          <h3>Support when you need it.</h3>
+          <p>Contact the FileLocker support team if you need help using the product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST ACCESS -->
+  <section>
+    <div class="wrap">
+      <div class="ea-teaser">
+        <div class="eyebrow">Request Access</div>
+        <h2>Currently available to selected professionals.</h2>
+        <p>We're gradually expanding availability to professionals who regularly handle sensitive client files.</p>
+        <a href="/early-access" class="btn btn-primary" style="margin-top:8px;">Request Access &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Pricing FAQ</div>
+        <h2>Common pricing questions.</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <div class="faq-q">Is FileLocker a subscription?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>No. FileLocker is planned as a one-time purchase with no recurring subscription.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How much will FileLocker cost?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>The planned purchase price is $29.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Does my recipient need to buy FileLocker?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>No. Recipients don't need to purchase or install the FileLocker desktop application to unlock a protected file.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does the purchase include?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>The FileLocker Windows application and the features included with the product at the time of purchase.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where will I be able to purchase FileLocker?<span class="plus mono">+</span></div>
+          <div class="faq-a"><p>FileLocker is currently available to selected professionals. Request access to learn about current availability and purchasing options.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement as HTMLElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-a') as HTMLElement;
+          if (a) a.style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const answer = item.querySelector('.faq-a') as HTMLElement;
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+</Layout>

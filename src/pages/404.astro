@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Page Not Found — FileLocker"
+  description="The page you were looking for doesn't exist. Return to the FileLocker homepage."
+>
+  <Navbar currentPath="" />
+
+  <section style="padding:120px 0;text-align:center;">
+    <div class="wrap">
+      <div class="eyebrow center">404</div>
+      <h1 style="font-size:clamp(32px,4vw,48px);margin-bottom:16px;">Page not found.</h1>
+      <p style="font-size:17px;color:var(--color-ink-soft);max-width:440px;margin:0 auto 36px;">The page you were looking for doesn't exist. It may have been moved or the link may be incorrect.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/" class="btn btn-primary">Back to Home &rarr;</a>
+        <a href="/how-it-works" class="btn btn-ghost">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
