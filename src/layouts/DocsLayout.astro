@@ -144,17 +144,18 @@ const description = frontmatter?.description || "Learn how to protect, deliver, 
     max-width: 720px;
   }
 
-  .docs-back-link {
-    display: inline-block;
+  .docs-content a.docs-back-link {
+    display: block;
+    width: fit-content;
     font-size: 14px;
     color: var(--color-ink-soft);
-    text-decoration: none !important;
-    margin-bottom: 24px;
+    text-decoration: none;
+    margin-bottom: 32px;
     font-weight: 500;
   }
   
-  .docs-back-link:hover {
-    color: var(--color-navy) !important;
+  .docs-content a.docs-back-link:hover {
+    color: var(--color-navy);
   }
 
   .docs-content h1 {
