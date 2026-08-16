@@ -370,7 +370,7 @@ section.section-alt { background: var(--color-paper); }
 .security-section {
   background: var(--color-navy-deep); color: #F2EFE6;
   border-radius: var(--radius-m); padding: 56px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+  display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center;
 }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
 .security-section .eyebrow { color: var(--color-brass-soft); }
