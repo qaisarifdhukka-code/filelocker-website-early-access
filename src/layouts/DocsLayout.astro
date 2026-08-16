@@ -1,0 +1,198 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title || "FileLocker Documentation";
+const description = frontmatter?.description || "Learn how to protect, deliver, and unlock sensitive files with FileLocker.";
+---
+
+<Layout title={title} description={description}>
+  <Navbar currentPath="/docs" />
+
+  <section class="docs-container">
+    <div class="wrap docs-wrap">
+      <!-- Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <nav>
+          <div class="docs-nav-group">
+            <h4 class="docs-nav-title">Overview</h4>
+            <ul>
+              <li><a href="/docs" class={Astro.url.pathname === '/docs' || Astro.url.pathname === '/docs/' ? 'active' : ''}>Introduction</a></li>
+              <li><a href="/docs/getting-started" class={Astro.url.pathname.includes('/getting-started') ? 'active' : ''}>Getting Started</a></li>
+            </ul>
+          </div>
+          
+          <div class="docs-nav-group">
+            <h4 class="docs-nav-title">Using FileLocker</h4>
+            <ul>
+              <li><a href="/docs/locking-files" class={Astro.url.pathname.includes('/locking-files') ? 'active' : ''}>Locking Files</a></li>
+              <li><a href="/docs/passwords" class={Astro.url.pathname.includes('/passwords') ? 'active' : ''}>Passwords & Recovery</a></li>
+              <li><a href="/docs/delivery-methods" class={Astro.url.pathname.includes('/delivery-methods') ? 'active' : ''}>Delivery Methods</a></li>
+            </ul>
+          </div>
+
+          <div class="docs-nav-group">
+            <h4 class="docs-nav-title">For Recipients</h4>
+            <ul>
+              <li><a href="/docs/unlocking-files" class={Astro.url.pathname.includes('/unlocking-files') ? 'active' : ''}>Unlocking Files</a></li>
+              <li><a href="/docs/supported-browsers" class={Astro.url.pathname.includes('/supported-browsers') ? 'active' : ''}>Supported Browsers</a></li>
+            </ul>
+          </div>
+
+          <div class="docs-nav-group">
+            <h4 class="docs-nav-title">Reference</h4>
+            <ul>
+              <li><a href="/docs/security" class={Astro.url.pathname.includes('/security') ? 'active' : ''}>Security Architecture</a></li>
+              <li><a href="/docs/troubleshooting" class={Astro.url.pathname.includes('/troubleshooting') ? 'active' : ''}>Troubleshooting</a></li>
+              <li><a href="/docs/faq" class={Astro.url.pathname.includes('/faq') ? 'active' : ''}>FAQ</a></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="docs-content">
+        <slot />
+      </main>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Docs Layout specific styles */
+  .docs-container {
+    padding: 60px 0 100px;
+    min-height: calc(100vh - 80px);
+  }
+
+  .docs-wrap {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .docs-wrap {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  /* Sidebar */
+  .docs-sidebar {
+    position: sticky;
+    top: 100px;
+  }
+  
+  @media (max-width: 900px) {
+    .docs-sidebar {
+      position: static;
+      display: none;
+    }
+  }
+
+  .docs-nav-group {
+    margin-bottom: 24px;
+  }
+
+  .docs-nav-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-faint);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .docs-nav-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .docs-nav-group li {
+    margin-bottom: 6px;
+  }
+
+  .docs-nav-group a {
+    display: block;
+    font-size: 14.5px;
+    color: var(--color-ink-soft);
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+
+  .docs-nav-group a:hover {
+    color: var(--color-navy);
+  }
+
+  .docs-nav-group a.active {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  /* Markdown Content Styling */
+  .docs-content {
+    max-width: 720px;
+  }
+
+  .docs-content h1 {
+    font-size: clamp(32px, 4vw, 42px);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .docs-content h2 {
+    font-size: 24px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .docs-content h3 {
+    font-size: 18px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  .docs-content p {
+    font-size: 16px;
+    color: var(--color-ink-soft);
+    margin-bottom: 20px;
+    line-height: 1.7;
+  }
+
+  .docs-content ul {
+    margin-bottom: 24px;
+    padding-left: 24px;
+    list-style: disc;
+    color: var(--color-ink-soft);
+  }
+
+  .docs-content li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  
+  .docs-content a {
+    color: var(--color-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--color-line-strong);
+    text-underline-offset: 3px;
+  }
+  
+  .docs-content a:hover {
+    text-decoration-color: var(--color-navy);
+  }
+
+  .docs-content strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+</style>

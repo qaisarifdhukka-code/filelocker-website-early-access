@@ -1,0 +1,71 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+---
+
+<DocsLayout 
+  frontmatter={{
+    title: "FileLocker Documentation",
+    description: "Learn how to protect, deliver, and unlock sensitive files."
+  }}
+>
+  <h1>FileLocker Documentation</h1>
+  <p style="font-size:18px; color:var(--color-ink-soft); margin-bottom:40px;">Secure file delivery, explained clearly. Learn how to protect sensitive files with FileLocker, deliver them to recipients, and unlock them without requiring the recipient to install the FileLocker desktop application.</p>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-bottom:48px;">
+    
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Getting Started</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Learn how to install FileLocker, activate your license, and protect your first file.</p>
+      <a href="/docs/getting-started" style="font-weight:600; font-size:14px;">&rarr; Getting Started</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Protecting Files</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Learn how to select files, choose where to save the protected file, configure privacy options, and create a password.</p>
+      <a href="/docs/locking-files" style="font-weight:600; font-size:14px;">&rarr; Locking Files</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Receiving Files</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Recipients can open a protected FileLocker file using a supported browser, enter the password, and save the original file.</p>
+      <a href="/docs/unlocking-files" style="font-weight:600; font-size:14px;">&rarr; Unlocking Files</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Passwords</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Learn how FileLocker uses passwords, Argon2id key derivation, password hints, and password generation.</p>
+      <a href="/docs/passwords" style="font-weight:600; font-size:14px;">&rarr; Passwords & Recovery</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Browser Compatibility</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Learn which browsers recipients can use to open and unlock protected files.</p>
+      <a href="/docs/supported-browsers" style="font-weight:600; font-size:14px;">&rarr; Supported Browsers</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Delivery</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Learn how to deliver a locked file using email, USB drives, file transfer services, or other methods.</p>
+      <a href="/docs/delivery-methods" style="font-weight:600; font-size:14px;">&rarr; Delivery Methods</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Security</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Understand FileLocker's encryption architecture, local processing model, and browser-based unlocking process.</p>
+      <a href="/docs/security" style="font-weight:600; font-size:14px;">&rarr; Security Architecture</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">Troubleshooting</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Find solutions to common installation, locking, delivery, and unlocking issues.</p>
+      <a href="/docs/troubleshooting" style="font-weight:600; font-size:14px;">&rarr; Troubleshooting</a>
+    </div>
+
+    <div style="background:var(--color-white); border:1px solid var(--color-line); padding:24px; border-radius:8px;">
+      <h3 style="margin-top:0; margin-bottom:8px;">FAQ</h3>
+      <p style="font-size:14px; margin-bottom:16px;">Find answers about privacy, encryption, passwords, recipients, supported platforms, and file delivery.</p>
+      <a href="/docs/faq" style="font-weight:600; font-size:14px;">&rarr; FileLocker FAQ</a>
+    </div>
+
+  </div>
+</DocsLayout>
