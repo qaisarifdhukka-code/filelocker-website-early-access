@@ -16,8 +16,17 @@ const navLinks = [
 
 <!-- Announcement Bar -->
 <div class="announcement-bar">
-  FileLocker is currently available to selected professionals. &mdash; <a href="/early-access">Request Access &rarr;</a>
+  <span class="banner-full">FileLocker is currently available to selected professionals. &mdash; <a href="/early-access">Request Access &rarr;</a></span>
+  <span class="banner-short">Now in Early Access. <a href="/early-access">Request Access &rarr;</a></span>
 </div>
+
+<style>
+  .banner-short { display: none; }
+  @media (max-width: 600px) {
+    .banner-full { display: none; }
+    .banner-short { display: inline; }
+  }
+</style>
 
 <header class="nav">
   <div class="wrap nav-inner">
