@@ -360,10 +360,11 @@ section.section-alt { background: var(--color-paper); }
 .compare-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 22px; display: block; color: var(--color-ink-faint); }
 .compare-col.with .compare-title { color: var(--color-brass-soft); }
 .compare-col li { display: flex; gap: 12px; font-size: 14.8px; padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--color-ink-soft); }
-.compare-col.with li { border-bottom: 1px solid rgba(255,255,255,0.08); color: #C7CDD9; }
+.compare-col.with li { display: block; border-bottom: 1px solid rgba(255,255,255,0.08); color: #C7CDD9; padding: 14px 0; }
 .compare-col li:last-child { border-bottom: none; }
 .compare-col li::before { content: "–"; color: var(--color-ink-faint); flex-shrink: 0; }
-.compare-col.with li::before { content: "✓"; color: var(--color-brass-soft); }
+.compare-col.with li::before { content: "✓ "; color: var(--color-brass-soft); }
+.compare-col.with li strong { display: inline; color: #fff; }
 
 /* ---- SECURITY SECTION ---- */
 .security-section {
