@@ -54,6 +54,9 @@ const description = frontmatter?.description || "Learn how to protect, deliver, 
 
       <!-- Main Content -->
       <main class="docs-content">
+        {Astro.url.pathname !== '/docs' && Astro.url.pathname !== '/docs/' && (
+          <a href="/docs" class="docs-back-link">&larr; Back to Documentation</a>
+        )}
         <slot />
       </main>
     </div>
@@ -139,6 +142,19 @@ const description = frontmatter?.description || "Learn how to protect, deliver, 
   /* Markdown Content Styling */
   .docs-content {
     max-width: 720px;
+  }
+
+  .docs-back-link {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--color-ink-soft);
+    text-decoration: none !important;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  
+  .docs-back-link:hover {
+    color: var(--color-navy) !important;
   }
 
   .docs-content h1 {
