@@ -42,29 +42,47 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- WHAT FILELOCKER DOES -->
+  <!-- WHAT FILELOCKER DOES (8-STEP ARCHITECTURE) -->
   <section class="section-alt">
     <div class="wrap">
       <div class="section-head center">
-        <div class="eyebrow center">Local processing</div>
-        <h2>Everything happens on your device.</h2>
-        <p>FileLocker is designed around a simple principle: protect the document before you send it. Your original file is processed locally and converted into a protected, self-contained locked file.</p>
+        <div class="eyebrow center">Security Architecture</div>
+        <h2>The 8-Step Local Encryption Flow</h2>
+        <p>FileLocker operates entirely offline. Below is the exact technical lifecycle of a protected file — explicitly showing what happens on your device versus the recipient's device. <strong>At no point do FileLocker servers receive or process any data.</strong></p>
       </div>
-      <div class="grid-3">
-        <div>
-          <span class="step-num mono">LOCKING</span>
-          <h3 style="font-size:19px;margin-bottom:12px;">What happens when you lock a file</h3>
-          <p style="font-size:14.8px;color:var(--color-ink-soft);">Your password is processed through Argon2id to produce an encryption key. The original file is encrypted using AES-256-GCM. The result is a single locked file containing the encrypted contents. No copy of your password or encryption key is stored anywhere.</p>
+      
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:32px;">
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">1. File Selection</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">You select a document or folder on your local Windows machine. The file never leaves your RAM.</p>
         </div>
-        <div>
-          <span class="step-num mono">TRANSMISSION</span>
-          <h3 style="font-size:19px;margin-bottom:12px;">What happens during delivery</h3>
-          <p style="font-size:14.8px;color:var(--color-ink-soft);">The locked file contains only the encrypted data. It is completely inert. Even if it is intercepted, copied, or stolen in transit — without the password, whoever has the file cannot read a single byte of its contents.</p>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">2. Local Processing</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">The FileLocker desktop application reads the file entirely offline. No network requests are made.</p>
         </div>
-        <div>
-          <span class="step-num mono">UNLOCKING</span>
-          <h3 style="font-size:19px;margin-bottom:12px;">What happens when your client unlocks</h3>
-          <p style="font-size:14.8px;color:var(--color-ink-soft);">The locked file opens in your client's browser. Their password is processed through Argon2id. The browser's built-in Web Crypto API decrypts the contents entirely inside the browser tab. No password, no decrypted file, and no data of any kind is transmitted to any server.</p>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">3. Key Derivation</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">Your password is processed locally using Argon2id to derive a secure cryptographic key.</p>
+        </div>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">4. AES-256-GCM</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">The file buffer is encrypted in-memory using AES-256-GCM. The plaintext is then wiped from memory.</p>
+        </div>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">5. Vault Generation</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">A self-contained `.html` file is generated containing the encrypted ciphertext and the unlock interface.</p>
+        </div>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">6. Delivery</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">You deliver the locked file via email or USB. Even if intercepted, it remains mathematically protected.</p>
+        </div>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">7. Browser Decryption</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">The recipient opens the file in a standard browser. Their password derives the key locally via Web Crypto API.</p>
+        </div>
+        <div style="background:#0F1420; padding:24px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <span class="step-num mono">8. File Extraction</span>
+          <p style="font-size:14px;color:var(--color-ink-soft);margin-top:12px;">The original file is extracted directly to the recipient's local Downloads folder. No servers are involved.</p>
         </div>
       </div>
     </div>
